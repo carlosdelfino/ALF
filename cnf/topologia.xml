@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XML Spy v4.2 U (http://www.xmlspy.com) by Aminadabe (Aminadabe) -->
+<Topologia xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="C:\Eclipse\workspace\Correlação de Alarmes\cnf\topologia.xsd" xsi:biblioteca="C:\Eclipse\workspace\Correlação de Alarmes\cnf\biblioteca.xsd">
+	<Elemento id="n01" tipo="nl" nome="No de Rede 1"/>
+	<Elemento id="n02" tipo="nc" nome="No de Rede 2"/>
+	<Elemento id="n03" tipo="nc" nome="No de Rede 3"/>
+	<Elemento id="n04" tipo="nl" nome="No de Rede 4"/>
+	<Elemento id="n05" tipo="nl" nome="No de Rede 5"/>
+	<Elemento id="n06" tipo="nc" nome="No de Rede 6"/>
+	<Elemento id="n07" tipo="nl" nome="No de Rede 7"/>
+	<Elemento id="n08" tipo="nc" nome="No de Rede 8"/>
+	<Elemento id="n09" tipo="nl" nome="No de Rede 9"/>
+	<Elemento id="n10" tipo="nl" nome="No de Rede 10"/>
+	<Elemento id="n11" tipo="nl" nome="No de Rede 11"/>
+	<Elemento id="n12" tipo="nl" nome="No de Rede 12"/>
+	<Elemento id="n13" tipo="nc" nome="No de Rede 13"/>
+	<Elemento id="n14" tipo="nl" nome="No de Rede 14"/>
+	<Elemento id="n15" tipo="nc" nome="No de Rede 15"/>
+	<Elemento id="n16" tipo="nc" nome="No de Rede 16"/>
+	<Elemento id="n17" tipo="nl" nome="No de Rede 17"/>
+	<Elemento id="n18" tipo="nl" nome="No de Rede 18"/>
+	<Elemento id="n19" tipo="nl" nome="No de Rede 19"/>
+	<Elemento id="n20" tipo="nl" nome="Nó de Rede 20 - Salvador"/>
+	<Elemento id="n21" tipo="nl" nome="Nó de Rede 21"/>
+	<Elemento id="f0103" tipo="fibra" nome="Fibra entre No 01 e 03" ccw="true"/>
+	<Elemento id="f0208" tipo="fibra" nome="Fibra entre No 02 e 08" ccw="false"/>
+	<Elemento id="f0810" tipo="fibra" nome="Fibra entre Nó 08 e 10" ccw="false"/>
+	<Elemento id="f1015" tipo="fibra" ccw="false"/>
+	<Elemento id="f1516" tipo="fibra" ccw="false"/>
+	<Elemento id="f1618" tipo="fibra"/>
+	<Elemento id="f1213" tipo="fibra"/>
+	<Elemento id="f1314" tipo="fibra" ccw="false"/>
+	<Elemento id="f1415" tipo="fibra" ccw="false"/>
+	<Elemento id="f1820" tipo="fibra"/>
+	<Elemento id="f0306" tipo="fibra"/>
+	<Elemento id="f0611" tipo="fibra"/>
+	<Elemento id="f1116" tipo="fibra"/>
+	<Elemento id="f2021" tipo="fibra"/>
+	<Elemento id="f0102" tipo="fibra"/>
+	<Elemento id="f0809" tipo="fibra"/>
+	<Elemento id="f0912" tipo="fibra"/>
+	<Elemento id="f1615" tipo="fibra" ccw="true"/>
+	<Elemento id="f1514" tipo="fibra" ccw="true"/>
+	<Elemento id="f1413" tipo="fibra" ccw="true"/>
+	<Elemento id="f1317" tipo="fibra"/>
+	<Canal id="c1" nome="Canal 1">
+		<Elementos idElemento="n02"/>
+		<Elementos idElemento="n08"/>
+		<Elementos idElemento="n10"/>
+		<Elementos idElemento="n15"/>
+		<Elementos idElemento="n16"/>
+		<Elementos idElemento="n18"/>
+	</Canal>
+	<Canal id="c2" nome="Canal 2">
+		<Elementos idElemento="n12"/>
+		<Elementos idElemento="n13"/>
+		<Elementos idElemento="n14"/>
+		<Elementos idElemento="n15"/>
+		<Elementos idElemento="n16"/>
+		<Elementos idElemento="n18"/>
+		<Elementos idElemento="n20"/>
+	</Canal>
+	<Canal id="c3" nome="Canal 3">
+		<Elementos idElemento="n03"/>
+		<Elementos idElemento="n06"/>
+		<Elementos idElemento="n11"/>
+		<Elementos idElemento="n16"/>
+		<Elementos idElemento="n18"/>
+		<Elementos idElemento="n20"/>
+		<Elementos idElemento="n21"/>
+	</Canal>
+	<Canal id="c4" nome="Canal 4">
+		<Elementos idElemento="n01"/>
+		<Elementos idElemento="n02"/>
+		<Elementos idElemento="n08"/>
+		<Elementos idElemento="n09"/>
+		<Elementos idElemento="n12"/>
+		<Elementos idElemento="n13"/>
+		<Elementos idElemento="n14"/>
+	</Canal>
+	<Canal id="c5" nome="Canal 5">
+		<Elementos idElemento="n08"/>
+		<Elementos idElemento="n10"/>
+		<Elementos idElemento="n11"/>
+	</Canal>
+	<Canal id="c6" nome="Canal 6">
+		<Elementos idElemento="n11"/>
+		<Elementos idElemento="n16"/>
+		<Elementos idElemento="n15"/>
+		<Elementos idElemento="n14" sentido="ccw"/>
+		<Elementos idElemento="n13"/>
+		<Elementos idElemento="n17"/>
+	</Canal>
+</Topologia>

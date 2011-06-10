@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XML Spy v4.2 U (http://www.xmlspy.com) by Aminadabe (Aminadabe) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="Topologia">
+		<xs:annotation>
+			<xs:documentation>Elemento XML Raiz que monta a topologia para os testes</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Temos aqui sequencias de elementos e Canais</xs:documentation>
+				</xs:annotation>
+				<xs:element ref="Elemento" maxOccurs="unbounded"/>
+				<xs:element ref="Canal" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Elemento">
+		<xs:annotation>
+			<xs:documentation>Descrevemos os elementos que iremos ter formando os canais</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:attribute name="id" type="xs:ID" use="required"/>
+			<xs:attribute name="tipo" type="xs:string" use="required"/>
+			<xs:attribute name="nome" type="xs:string"/>
+			<xs:attribute name="ccw" type="xs:boolean"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Canal">
+		<xs:annotation>
+			<xs:documentation>Descrevemos um canal da topologia. Este canal é composto por elementos</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:annotation>
+					<xs:documentation>Temos uma seguencia de elementos, veja que estes elementos são apenas referencia ao tipo Elemento.</xs:documentation>
+				</xs:annotation>
+				<xs:element ref="Elementos" maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:documentation>Elementos que compõem a rede, este campo é apenas uma referencia ao ID do elemento, evitando assim que tenhamos redundancia de dados.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="id" use="required">
+				<xs:simpleType>
+					<xs:restriction base="xs:ID"/>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="nome" type="xs:string" use="optional"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Elementos">
+		<xs:annotation>
+			<xs:documentation>Elementos que compoem o canal, este elemento xml tem como attributo o ID do Elemento do tipo Nó.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:attribute name="idElemento"/>
+			<xs:attribute name="sentido"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:attribute name="tipo" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>Faz referencia ao ID dos componentes que forão definidos no arquivo Biblioteca</xs:documentation>
+		</xs:annotation>
+	</xs:attribute>
+	<xs:attribute name="nome" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>Nome do elemento ou canal</xs:documentation>
+		</xs:annotation>
+	</xs:attribute>
+	<xs:attribute name="idElemento"/>
+	<xs:attribute name="id">
+		<xs:annotation>
+			<xs:documentation>Identificação do elemento da rede ou do canal, veja a anotação abaixo(**).</xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:ID">
+				<xs:whiteSpace value="collapse"/>
+				<xs:minLength value="2"/>
+				<xs:maxLength value="3"/>
+				<xs:pattern value="\p{Nd}"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:attribute>
+	<xs:attribute name="ccw" type="xs:boolean">
+		<xs:annotation>
+			<xs:documentation>Indica o Sentido que o link irá ligar os nós, se verdadeiro é counter clock wise, ou seja no sentido ante horariro.</xs:documentation>
+		</xs:annotation>
+	</xs:attribute>
+	<xs:annotation>
+		<xs:documentation>**O id quando usado em elemento de rede que seja fibra, deve ser composto por uma letra f (minuscula) e os numeros que compõem o ID do Nó sem a Letra "n" (que siginifica n), portanto, se estou identificando a Fibra que liga o Nó 20 ao nó 35, a identificação da fibra será f2035, se a ouver ligação CCW (Counter Clock Wise)  relevante deve ser também criada a Fibra F3520, um detalhe importante, o proprio algoritimo pode deduzir isto automaticamente.</xs:documentation>
+	</xs:annotation>
+</xs:schema>

@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XML Spy v4.2 U (http://www.xmlspy.com) by Aminadabe (Aminadabe) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="SubElemento">
+		<xs:annotation>
+			<xs:documentation>São configurações visiveis dos Elementos conforme sua posição no Canal</xs:documentation>
+			<xs:appinfo>por exemplo, tem-se um nó local que está posicionado como inicio de um canal, neste caso ele será percebido apenas os seguintes componetes:
+- LAP
+- TX
+- ADF
+já sendo nó de passagem, será persebido apenas o seguinte componente:
+- ADF</xs:appinfo>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Componentes" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:attribute name="idComp" type="xs:IDREF" use="required"/>
+						<xs:attribute name="idMas"/>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="id" type="xs:ID" use="required"/>
+			<xs:attribute name="nome"/>
+			<xs:attribute name="idElemento" type="xs:string" use="required"/>
+			<xs:attribute name="posicao" type="xs:string" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Elemento">
+		<xs:annotation>
+			<xs:documentation>São Compostos por Componetes que formam os Nos Centrais ou Locais</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Componentes" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:attribute name="idComp" type="xs:IDREF" use="required"/>
+						<xs:attribute name="idMas"/>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="id" type="xs:ID" use="required"/>
+			<xs:attribute name="nome"/>
+			<xs:attribute name="tipo" use="required" form="qualified">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:whiteSpace value="collapse"/>
+						<xs:enumeration value="Local"/>
+						<xs:enumeration value="Central"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="subTipo" type="xs:IDREF"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Categoria">
+		<xs:annotation>
+			<xs:documentation>Categorias de Alarmes</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:attributeGroup ref="classe"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Componente">
+		<xs:annotation>
+			<xs:documentation>São os menores itens de uma Topologia, e estes Compõem os Elementos Nós e também incluem as Fibras</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:attribute name="id" type="xs:ID" use="required"/>
+			<xs:attribute name="nome" type="xs:string" use="required"/>
+			<xs:attributeGroup ref="classe"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Alarme">
+		<xs:complexType>
+			<xs:choice>
+				<xs:element name="Falha" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:attribute name="origem" type="xs:IDREF"/>
+						<xs:attribute name="natureza" type="xs:string"/>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Cancelamento" maxOccurs="unbounded"/>
+			</xs:choice>
+			<xs:attribute name="id" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Biblioteca">
+		<xs:annotation>
+			<xs:documentation>Elemento Raiz, contem as definições</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Componente" maxOccurs="unbounded"/>
+				<xs:element ref="Elemento" maxOccurs="unbounded"/>
+				<xs:element ref="SubElemento" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:attribute name="ver" type="xs:string" use="optional"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:attribute name="id" type="xs:ID">
+		<xs:annotation>
+			<xs:documentation>Identificação numerica ou conjunto de caracteres</xs:documentation>
+		</xs:annotation>
+	</xs:attribute>
+	<xs:attribute name="idComp">
+		<xs:annotation>
+			<xs:documentation>é uma referencia a algun ID de outro componente definido</xs:documentation>
+		</xs:annotation>
+	</xs:attribute>
+	<xs:attribute name="nome" type="xs:string" id="Name">
+		<xs:annotation>
+			<xs:documentation>Nome do elemento ou componente de forma mais representativa</xs:documentation>
+		</xs:annotation>
+	</xs:attribute>
+	<xs:attributeGroup name="classe" id="Classe">
+		<xs:annotation>
+			<xs:documentation>a classe do componente, pode ser passivo, ou um dos 3 tipos de ativos</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="selfalarm" type="xs:boolean" use="optional"/>
+		<xs:attribute name="outalarm" type="xs:boolean" use="optional"/>
+		<xs:attribute name="maskalarm" type="xs:boolean" use="optional"/>
+	</xs:attributeGroup>
+	<xs:attribute name="tipo" type="xs:string" id="No">
+		<xs:annotation>
+			<xs:documentation>Tipo de no central ou local</xs:documentation>
+		</xs:annotation>
+	</xs:attribute>
+	<xs:attribute name="selfAlarm" type="xs:boolean" default="0">
+		<xs:annotation>
+			<xs:documentation>é Self Alarmed?</xs:documentation>
+		</xs:annotation>
+	</xs:attribute>
+	<xs:attribute name="outAlarm" type="xs:boolean" default="0">
+		<xs:annotation>
+			<xs:documentation>é Out Alarming?</xs:documentation>
+		</xs:annotation>
+	</xs:attribute>
+	<xs:attribute name="maskAlarm" type="xs:boolean" default="0">
+		<xs:annotation>
+			<xs:documentation>é Mask Alarmed?</xs:documentation>
+		</xs:annotation>
+	</xs:attribute>
+	<xs:attribute name="idMas" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>ID usado pela Mas, está aqui somente para facilitar o entendimento.</xs:documentation>
+		</xs:annotation>
+	</xs:attribute>
+	<xs:attribute name="idElemento">
+		<xs:annotation>
+			<xs:documentation>ID do Elemento que ele compoem</xs:documentation>
+		</xs:annotation>
+	</xs:attribute>
+	<xs:annotation>
+		<xs:documentation>O Elemento Rede é Composto pelos Elementos Nos e Fibras</xs:documentation>
+	</xs:annotation>
+	<xs:annotation>
+		<xs:documentation>O Elemento Nó é Composto pelos Elementos Componentes</xs:documentation>
+	</xs:annotation>
+	<xs:annotation>
+		<xs:documentation>A Fibra é o único componente que é tratado como Elemento a nivel dos Nós, pois ela interliga os mesmos.</xs:documentation>
+	</xs:annotation>
+	<xs:annotation>
+		<xs:documentation>O Componente é o menor elemento da Rede.</xs:documentation>
+	</xs:annotation>
+	<xs:annotation>
+		<xs:documentation>Alarmes podem ser enviados quando um problema ocorre, e também quando o estado natural é restaurado.</xs:documentation>
+	</xs:annotation>
+	<xs:annotation>
+		<xs:documentation>Todos as classes javas equivalentes aos elementos definidos aqui, devem estar no pacote biblioteca, também devem iniciar com o prefixo Tipo, portanto o Elemento Componente dever ser referido como a Classe TipoComponente.</xs:documentation>
+	</xs:annotation>
+</xs:schema>
