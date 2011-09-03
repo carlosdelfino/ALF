@@ -112,12 +112,12 @@ public class Topologia
 
 				int indiceant = getNumeroDoIndice(idnoanterior);
 				No noanterior = (No)nos.get(indiceant);	
-				System.out.println(" *** Ele pegou o nó A " + noanterior.getId()+" usando o indice "+ indiceant);
+				System.out.println(" *** Ele pegou o n— A " + noanterior.getId()+" usando o indice "+ indiceant);
 				System.out.println(noanterior);
 							
 				int indicepos = getNumeroDoIndice(idnoposterior);
 				No noposterior = (No)nos.get(indicepos);
-				System.out.println(" *** Ele pegou o nó P " + noposterior.getId()+" usando o indice "+ indicepos);
+				System.out.println(" *** Ele pegou o n— P " + noposterior.getId()+" usando o indice "+ indicepos);
 				System.out.println(noposterior);
 				
 
