@@ -8,6 +8,8 @@
  */
 package util;
 
+import java.awt.Dimension;
+
 /**
  * @author Carlos Delfino
  * @email suporte@carlosdelfino.eti.br
@@ -16,7 +18,7 @@ package util;
  * Digite aqui o que esta classe faz.
  * Nome: 
  */
-public class Coordenadas
+public class Coordenadas extends Dimension
 {
 	private double longitude = 0;
 	private double latitude = 0;

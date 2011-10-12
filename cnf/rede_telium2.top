@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Topologia xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="C:\Correlação De Alarmes\cnf\topologia.xsd">
+	<Elemento id="n01" idelemento="NL" nome="No de Rede A" latitude="30" longitude="60"/>
+	<Elemento id="n02" idelemento="NC" nome="No de Rede B" latitude="160" longitude="60"/>
+	<Elemento id="n03" idelemento="NC" nome="No de Rede C" latitude="270" longitude="60"/>
+	<Elemento id="n04" idelemento="NC" nome="No de Rede D" latitude="380" longitude="60"/>
+	<Elemento id="n05" idelemento="NC" nome="No de Rede E" latitude="550" longitude="60"/>
+	<Elemento id="n06" idelemento="NC" nome="No de Rede F" latitude="650" longitude="60"/>
+	<Elemento id="n07" idelemento="NL" nome="No de Rede G" latitude="745" longitude="60"/>
+	<Elemento id="n08" idelemento="NL" nome="No de Rede H" latitude="30" longitude="150"/>
+	<Elemento id="n09" idelemento="NC" nome="No de Rede I" latitude="160" longitude="150"/>
+	<Elemento id="n10" idelemento="NC" nome="No de Rede J" latitude="270" longitude="150"/>
+	<Elemento id="n11" idelemento="NC" nome="No de Rede L" latitude="380" longitude="150"/>
+	<Elemento id="n12" idelemento="NC" nome="No de Rede M" latitude="550" longitude="150"/>
+	<Elemento id="n13" idelemento="NC" nome="No de Rede N" latitude="650" longitude="150"/>
+	<Elemento id="n14" idelemento="NL" nome="No de Rede O" latitude="745" longitude="150"/>
+	<Elemento id="n15" idelemento="NL" nome="No de Rede P" latitude="30" longitude="230"/>
+	<Elemento id="n16" idelemento="NC" nome="No de Rede Q" latitude="160" longitude="230"/>
+	<Elemento id="n17" idelemento="NC" nome="No de Rede R" latitude="270" longitude="230"/>
+	<Elemento id="n18" idelemento="NC" nome="No de Rede S" latitude="380" longitude="230"/>
+	<Elemento id="n19" idelemento="NC" nome="No de Rede T" latitude="550" longitude="230"/>
+	<Elemento id="n20" idelemento="NC" nome="No de Rede T" latitude="650" longitude="230"/>
+	<Elemento id="n21" idelemento="NL" nome="No de Rede U" latitude="745" longitude="230"/>
+	<Elemento id="n22" idelemento="NL" nome="No de Rede V" latitude="30" longitude="310"/>
+	<Elemento id="n23" idelemento="NC" nome="No de Rede Z" latitude="160" longitude="310"/>
+	<Elemento id="n24" idelemento="NC" nome="No de Rede AA" latitude="270" longitude="310"/>
+	<Elemento id="n25" idelemento="NC" nome="No de Rede BB" latitude="380" longitude="310"/>
+	<Elemento id="n26" idelemento="NC" nome="No de Rede CC" latitude="550" longitude="310"/>
+	<Elemento id="n27" idelemento="NC" nome="No de Rede DD" latitude="650" longitude="310"/>
+	<Elemento id="n28" idelemento="NL" nome="No de Rede EE" latitude="745" longitude="310"/>
+	<Elemento id="n29" idelemento="NL" nome="No de Rede FF" latitude="30" longitude="400"/>
+	<Elemento id="n30" idelemento="NL" nome="No de Rede GG" latitude="160" longitude="400"/>
+	<Elemento id="n31" idelemento="NC" nome="No de Rede HH" latitude="270" longitude="400"/>
+	<Elemento id="n32" idelemento="NL" nome="No de Rede II" latitude="380" longitude="400"/>
+	<Elemento id="n33" idelemento="NC" nome="No de Rede JJ" latitude="550" longitude="400"/>
+	<Elemento id="n34" idelemento="NL" nome="No de Rede LL" latitude="650" longitude="400"/>
+	<Elemento id="n35" idelemento="NL" nome="No de Rede MM" latitude="745" longitude="400"/>
+	<Elemento id="f0102" idelemento="Link"/>
+	<Elemento id="f0201" idelemento="Link"/>
+	<Elemento id="f0203" idelemento="Link"/>
+	<Elemento id="f0302" idelemento="Link"/>
+	<Elemento id="f0209" idelemento="Link"/>
+	<Elemento id="f0902" idelemento="Link"/>
+	<Elemento id="f0304" idelemento="Link"/>
+	<Elemento id="f0403" idelemento="Link"/>
+	<Elemento id="f0504" idelemento="Link"/>
+	<Elemento id="f0405" idelemento="Link"/>
+	<Elemento id="f0411" idelemento="Link"/>
+	<Elemento id="f1104" idelemento="Link"/>
+	<Elemento id="f0506" idelemento="Link"/>
+	<Elemento id="f0605" idelemento="Link"/>
+	<Elemento id="f0607" idelemento="Link"/>
+	<Elemento id="f0706" idelemento="Link"/>
+	<Elemento id="f0613" idelemento="Link"/>
+	<Elemento id="f1306" idelemento="Link"/>
+	<Elemento id="f0809" idelemento="Link"/>
+	<Elemento id="f0908" idelemento="Link"/>
+	<Elemento id="f0910" idelemento="Link"/>
+	<Elemento id="f1009" idelemento="Link"/>
+	<Elemento id="f1011" idelemento="Link"/>
+	<Elemento id="f1110" idelemento="Link"/>
+	<Elemento id="f1112" idelemento="Link"/>
+	<Elemento id="f1211" idelemento="Link"/>
+	<Elemento id="f1312" idelemento="Link"/>
+	<Elemento id="f1213" idelemento="Link"/>
+	<Elemento id="f1413" idelemento="Link"/>
+	<Elemento id="f1314" idelemento="Link"/>
+	<Elemento id="f0815" idelemento="Link"/>
+	<Elemento id="f1508" idelemento="Link"/>
+	<Elemento id="f1516" idelemento="Link"/>
+	<Elemento id="f1615" idelemento="Link"/>
+	<Elemento id="f1716" idelemento="Link"/>
+	<Elemento id="f1617" idelemento="Link"/>
+	<Elemento id="f1817" idelemento="Link"/>
+	<Elemento id="f1718" idelemento="Link"/>
+	<Elemento id="f1819" idelemento="Link"/>
+	<Elemento id="f1918" idelemento="Link"/>
+	<Elemento id="f1017" idelemento="Link"/>
+	<Elemento id="f1710" idelemento="Link"/>
+	<Elemento id="f1219" idelemento="Link"/>
+	<Elemento id="f1912" idelemento="Link"/>
+	<Elemento id="f1421" idelemento="Link"/>
+	<Elemento id="f2114" idelemento="Link"/>
+	<Elemento id="f1920" idelemento="Link"/>
+	<Elemento id="f2019" idelemento="Link"/>
+	<Elemento id="f2021" idelemento="Link"/>
+	<Elemento id="f2120" idelemento="Link"/>
+	<Elemento id="f1623" idelemento="Link"/>
+	<Elemento id="f2316" idelemento="Link"/>
+	<Elemento id="f2223" idelemento="Link"/>
+	<Elemento id="f2322" idelemento="Link"/>
+	<Elemento id="f2324" idelemento="Link"/>
+	<Elemento id="f2423" idelemento="Link"/>
+	<Elemento id="f2425" idelemento="Link"/>
+	<Elemento id="f2524" idelemento="Link"/>
+	<Elemento id="f2526" idelemento="Link"/>
+	<Elemento id="f2625" idelemento="Link"/>
+	<Elemento id="f2627" idelemento="Link"/>
+	<Elemento id="f2726" idelemento="Link"/>
+	<Elemento id="f2728" idelemento="Link"/>
+	<Elemento id="f2827" idelemento="Link"/>
+	<Elemento id="f1825" idelemento="Link"/>
+	<Elemento id="f2518" idelemento="Link"/>
+	<Elemento id="f2027" idelemento="Link"/>
+	<Elemento id="f2720" idelemento="Link"/>
+	<Elemento id="f2229" idelemento="Link"/>
+	<Elemento id="f2922" idelemento="Link"/>
+	<Elemento id="f2930" idelemento="Link"/>
+	<Elemento id="f3029" idelemento="Link"/>
+	<Elemento id="f3031" idelemento="Link"/>
+	<Elemento id="f3130" idelemento="Link"/>
+	<Elemento id="f2431" idelemento="Link"/>
+	<Elemento id="f3124" idelemento="Link"/>
+	<Elemento id="f3132" idelemento="Link"/>
+	<Elemento id="f3231" idelemento="Link"/>
+	<Elemento id="f3233" idelemento="Link"/>
+	<Elemento id="f3332" idelemento="Link"/>
+	<Elemento id="f2633" idelemento="Link"/>
+	<Elemento id="f3326" idelemento="Link"/>
+	<Elemento id="f3334" idelemento="Link"/>
+	<Elemento id="f3433" idelemento="Link"/>
+	<Elemento id="f3435" idelemento="Link"/>
+	<Elemento id="f3534" idelemento="Link"/>
+	<Elemento id="f2835" idelemento="Link"/>
+	<Elemento id="f3528" idelemento="Link"/>
+</Topologia>

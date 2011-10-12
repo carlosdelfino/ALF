@@ -8,18 +8,18 @@
  */
 package correlacaodealarmes;
 
-import simuladordarede.Alarme;
-import simuladordarede.Alarmes;
+import geradorautomaticodealarmes.Alarme;
+import geradorautomaticodealarmes.Alarmes;
 
 import java.util.Iterator;
 import java.util.Set;
 import java.util.TreeSet;
 
-import geradorautomaticoderotas.Canais;
-import geradorautomaticoderotas.Canal;
-import geradorautomaticoderotas.RotaFisica;
-import biblioteca.Componente;
-import biblioteca.IdMas;
+import gerenciadordetopologia.Canais;
+import gerenciadordetopologia.Canal;
+import gerenciadordetopologia.RotaFisica;
+import gerenciadordebiblioteca.Componente;
+import gerenciadordebiblioteca.IdMas;
 
 /**
  * @author Carlos Delfino

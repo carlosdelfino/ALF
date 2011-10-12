@@ -50,8 +50,8 @@ public final class ActionListenerExibirDominioFalhas extends ActionListenerCarre
 
 		try
 		{
-			parente.getJTextAreaDominio().setText(
-				parente.getAlgoritimoDeCorrelacaoDeAlarmes().getDominio().toString());
+			parente.getJTreeDominio().setModel(
+				parente.getAlgoritimoDeCorrelacaoDeAlarmes().getDominio().arvoreDoDominio());
 		} catch (ParserConfigurationException e1)
 		{
 			// TODO Bloco de captura gerado automaticamente
@@ -60,6 +60,8 @@ public final class ActionListenerExibirDominioFalhas extends ActionListenerCarre
 
 		if (p_tab != null)
 			mudaTab(p_tab);
+			
+		parente.getJTreeDominio().setVisible(true);
 
 	}
 

@@ -1,0 +1,121 @@
+Toda a descrição da Biblioteca deve estar envolvida pelas tags XML:
+<Biblioteca 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:noNamespaceSchemaLocation="biblioteca.xsd">
+	...
+	...
+	...
+</Biblioteca>
+
+Os parâmetros da tag Bibliteca são:
+	* "http://www.w3.org/2001/XMLSchema-instance"
+		Este parametro obrigatorio do XML
+    * xsi:noNamespaceSchemaLocation="biblioteca.xsd"
+    	Este parametro indica o arquivo que terá as definições das tags
+   	que iremos usar, inclusive a tag Biblioteca.
+
+Atualmente, temos as seguintes tags e seus parametros:
+	* Descrição da Classe de componente: 
+	      Esta tag descreve as classes existentes no algoritimo, esta é composta
+		por dois parametros e mais uma subtag. Devemos repetir esta tag de acordo com a quantidade de
+		classes existintes
+	  	  Os parametros disponiveis podem receber os valores true ou false, indicando
+    	se a classe tem aquele comportamento, quando o valor false for atribuido o 
+    	parametro pode ser omitido.
+      	  A sub tag Descrição, contem apenas uma  breve descrição da classe em forma
+    	textual para que possamos usar quando apresentarmos o componente no display.
+	  
+		<DescricaoClasse 
+	    	selfalarm="true|false"
+	    	outalarm="true|false" 
+	    	maskalarm="true|false">
+			<Descricao>.....</Descricao>
+		</DescricaoClasse>
+
+	* Descrição e comportamento dos componentes
+	 	  A tag Componente define informações tanto descritivas como comportamentais
+	 	do componete para o algorimo.
+	 	  Os parametros disponiveis para a tag definem seu comportamento e identificam
+	 	o componente internamente ao algorimo.
+	 	  O parametro id é usado para identificar o componente, procure limitaro id
+	 	em 3 letras e nunca use ids repetidos.
+	 	  O parametro nome fornece um nome para o componente, evite nomes muito longos
+	 	evite repetir nomes.
+	 	  Os parametros, selfalarm, outalarm, maskalarm são comportamentais, e so devem
+	 	ser usados na forma definina na tag "DescriçãoClasse".
+	 	
+	 	  A sub tag "Descrição" apenas possui uma descrição do componente para efeito
+	 	de apresentação. Esta tag pode ser omitida
+	 	
+		<Componente 
+			id="..." 
+			nome="..." 
+			selfalarm="true|false"
+	    	outalarm="true|false" 
+	    	maskalarm="true|false">
+			<Descricao>...</Descricao>
+		</Componente>
+	
+	* Descrição e Comportamento dos Nos.
+	      As tags descritas abaixo descrevem os nos e apontam os componentes que o
+	    compõem, estas tags não desenham a topologia da rede, elas apenas descrevem os
+	    Elementos que a compõem, como Nós, Links e Amplificador(O algoritimo ainda
+	    não trabalha com amplificadores)
+	      A tag Elemento identifica os elementos da rede e possui 3 parametros:
+	     	* id
+	     	  Este parametro fornece um id do tipo de Elemento, podendo ser um dos 
+       	    IDs: NL para Nó Local, NC para Nó Central, Link para Indicar um pár de 
+       	    fibras que interliga dois Nós. 
+	     	* tipo
+	     	  Aponta o Tipo de No e como o algoritimo irá trata-lo. Pode ser: Local
+	     	Central ou Link. 
+	     	* nome
+	     	  Este parametro permite fornecer um nome para o elemento.
+	     	  
+	      Já a sub Tag Componentes, permite que informemos os componentes que irão
+	    compor o Elemento, esta tag deve apontar os elementos na ordem basica que 
+	    apareceram no elemento, neste momento não estaremos ainda descrevendo as 
+	    visões dos Elementos que poderemos ter.
+	      A Sub Tag Componentes é uma tag vasia portanto deve terminar com a barra 
+	    como descrito abaixo, e deve ser composta com os seguintes parametros:
+	        * idComp
+	          Id do componente definido acima.
+	        * idMas
+	          montagem do ID conforme definido no artigo Localização de Falhas 
+	          em Redes de Comunicações nos Domínios SDH/WDM/ÓPTICO
+	          submetido ao SBRC 2005 
+	      
+	    <Elemento 
+	    	id="NL|NC|Link" 
+	    	tipo="..." 
+	    	nome="...">
+			<Componentes 
+				idComp="..." 
+				idMas="..."/>
+		</Elemento>
+		
+		  Como cada elemento pode ser visto como um conjunto de subelementos, temos
+		a tag "SubElemento", cada tag é composta por 4 parametros e Sub Tags Componentes
+		que indicam os componentes que a constrõem conform sua ordem.
+		  Temos os parametros:
+		  	* id
+		  	  Indentifica este SubElemento deve ser unico.
+		  	* idElemento
+		  	  Indica qual o Elemento definido acima contem este SubElemento.
+		  	* posicao
+		  	  Indica a posição deste sub elemento dentro do Elemento.
+		  	* nome
+		  	  Permite que forneçamos um nome para este SubElemento
+		  já sub tag Componentes funciona da mesma forma como apresentada anteriormente. 
+        mas devemos observar que deverão estar na ordem que compõem um Sub Elemento.
+		  	    
+		<SubElemento 
+			id="..." 
+			idElemento="..." 
+			posicao="inicial|final|passagem" 
+			nome="...">
+			<Componentes 
+				idComp="..." 
+				idMas="..."/>
+		<SubElemento/>
+	      

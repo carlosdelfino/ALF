@@ -8,16 +8,15 @@
  */
 package correlacaodealarmes;
 
-import simuladordarede.Alarme;
-import simuladordarede.Alarmes;
+import geradorautomaticodealarmes.Alarme;
+import geradorautomaticodealarmes.Alarmes;
+import gerenciadordebiblioteca.ID;
+import gerenciadordetopologia.Canais;
+import gerenciadordetopologia.Canal;
 
 import java.util.Iterator;
 import java.util.ListIterator;
 import java.util.TreeSet;
-
-import geradorautomaticoderotas.Canais;
-import geradorautomaticoderotas.Canal;
-import biblioteca.IdMas;
 
 /**
  * @author Carlos Delfino
@@ -76,13 +75,13 @@ class ElimanadorDeRedundancia
 		while (l_iterAlarmes.hasNext())
 		{
 			Alarme l_alarme1 = (Alarme)l_iterAlarmes.next();
-			IdMas l_componente1 = l_alarme1.getIdMasOrigem();
+			ID l_componente1 = l_alarme1.getIdMasOrigem();
 			ListIterator l_iterAlarmes2 =
 				alarmesNaoRedundantes.listIterator(alarmesNaoRedundantes.indexOf(l_alarme1) + 1);
 
 			while (l_iterAlarmes2.hasNext())
 			{
-				IdMas l_componente2 = ((Alarme)l_iterAlarmes2.next()).getIdMasOrigem();
+				ID l_componente2 = ((Alarme)l_iterAlarmes2.next()).getIdMasOrigem();
 				for (Iterator l_iteratorCanais = canais.iterator(); l_iteratorCanais.hasNext();)
 				{
 					if ( ((Canal)l_iteratorCanais.next()).isCaminhoPassivo(l_componente1,l_componente2))

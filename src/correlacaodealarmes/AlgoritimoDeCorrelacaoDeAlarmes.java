@@ -10,14 +10,14 @@ package correlacaodealarmes;
 
 import java.util.List;
 
-import simuladordarede.Alarme;
-import simuladordarede.Alarmes;
+import geradorautomaticodealarmes.Alarme;
+import geradorautomaticodealarmes.Alarmes;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 
-import geradorautomaticoderotas.Canais;
+import gerenciadordetopologia.Canais;
 
 /**
  * @author Carlos Delfino

@@ -7,7 +7,7 @@
  * 
  */
 
-import geradorautomaticoderotas.Topologia;
+import gerenciadordetopologia.Topologia;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -15,12 +15,12 @@ import java.util.StringTokenizer;
 
 import javax.xml.parsers.ParserConfigurationException;
 
-import simuladordarede.Alarmes;
-import simuladordarede.SimuladorDeEmissaoDeAlarmes;
-import simuladordarede.erros.ExceptionMaximoMenorMinimo;
-import biblioteca.Biblioteca;
-import biblioteca.IdMas;
-import biblioteca.erros.ExceptionBibliotecaNaoDefinida;
+import geradorautomaticodealarmes.Alarmes;
+import geradorautomaticodealarmes.SimuladorDeEmissaoDeAlarmes;
+import geradorautomaticodealarmes.erros.ExceptionMaximoMenorMinimo;
+import gerenciadordebiblioteca.Biblioteca;
+import gerenciadordebiblioteca.IdMas;
+import gerenciadordebiblioteca.erros.ExceptionBibliotecaNaoDefinida;
 import correlacaodealarmes.AlgoritimoDeCorrelacaoDeAlarmes;
 
 /**
@@ -92,10 +92,10 @@ public class Principal
 		// é a quantidade minima de alarmes
 		if (args.length == 3)
 		{
-			simulador.setMinFalhas(Integer.parseInt(args[0]));
+			simulador.setMinFalhasExtras(Integer.parseInt(args[0]));
 		} else
 		{
-			simulador.setMinFalhas(0);
+			simulador.setMinFalhasExtras(0);
 		}
 
 		// tenta setar o maximo de alarmes, caso o numero maximo
@@ -109,13 +109,13 @@ public class Principal
 			// segundo é a maxima
 			if (args.length == 3)
 			{
-				simulador.setMaxFalhas(Integer.parseInt(args[1]));
+				simulador.setMaxFalhasExtras(Integer.parseInt(args[1]));
 			} else if (args.length == 2)
 			{
-				simulador.setMaxFalhas(Integer.parseInt(args[0]));
+				simulador.setMaxFalhasExtras(Integer.parseInt(args[0]));
 			} else
 			{
-				simulador.setMaxFalhas(0);
+				simulador.setMaxFalhasExtras(0);
 			}
 
 		} catch (ExceptionMaximoMenorMinimo e1)

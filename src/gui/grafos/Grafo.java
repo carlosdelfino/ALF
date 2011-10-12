@@ -57,10 +57,10 @@ public class Grafo extends JPanel implements Runnable, MouseListener, MouseMotio
 	private double distanciaDaBorda = 15;
 
 	// cores dos Nós
-	private final Color fixedColor = Color.red;
+	private Color fixedColor = Color.red;
 
 	private Font fontePadraoDosNos = new Font("Tahoma", 0, 8);
-	private final Color nodeColor = new Color(250, 220, 100);
+	private Color nodeColor = new Color(250, 220, 100);
 
 	// Lista de Nos
 	private Set nos = new TreeSet();
@@ -638,5 +638,12 @@ public class Grafo extends JPanel implements Runnable, MouseListener, MouseMotio
 	{
 		distanciaPadraoEntreNos = p_i;
 
+	}
+	/**
+	 * @param color
+	 */
+	public void setCorFixa(Color color) {
+		fixedColor = color;
+		
 	}
 } //  @jve:visual-info  decl-index=0 visual-constraint="10,10"

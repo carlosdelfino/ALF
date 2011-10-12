@@ -8,6 +8,11 @@
  */
 package gui.actionlisteners;
 
+import java.awt.event.ActionEvent;
+
+import javax.swing.JTextField;
+
+import geradorautomaticodealarmes.SimuladorDeEmissaoDeAlarmes;
 import gui.PanelSimuladorDeAlarmes;
 
 /**
@@ -20,19 +25,67 @@ import gui.PanelSimuladorDeAlarmes;
 public class ActionListenerAdicionarRemoverAlarmes extends ActionListenerAdicionarRemover
 {
 
+	private SimuladorDeEmissaoDeAlarmes SimuladorDeEmissaoDeAlarmes;
+
+	private JTextField jTextField2;
+
 	/**
 	 * @param p_parente
 	 */
 	public ActionListenerAdicionarRemoverAlarmes(PanelSimuladorDeAlarmes p_parente)
 	{
-		
-			setParente(p_parente);
-			setJTextField(p_parente.getJTFComponnenteOrigemAlarme());
-			
-			setListModel(p_parente.getjListModelAlarmes());
-			setJList(p_parente.getJListDeAlarmes());
+		setSimuladorDeEmissaoDeAlarmes(p_parente.getSimuladorDeEmissaoDeAlarmes());
 
-			setLinhaDeStatus(p_parente.getLinhaDeStatus());
+		setJTextField(p_parente.getJTFComponnenteOrigemAlarme());
+		setJTextField2(p_parente.getJTFNivelDoAlarme());
+
+		setListModel(p_parente.getjListModelAlarmes());
+		setJList(p_parente.getJListDeAlarmes());
+
+		setJBottonAdicionar(p_parente.getJBAdicionarAlarmes());
+		setJBottonRemover(p_parente.getJBRemoverAlarmes());
+
+		setLinhaDeStatus(p_parente.getLinhaDeStatus());
+	}
+
+	/**
+	 * @param p_alarmes
+	 */
+	private void setSimuladorDeEmissaoDeAlarmes(SimuladorDeEmissaoDeAlarmes p_simulador)
+	{
+		SimuladorDeEmissaoDeAlarmes = p_simulador;
+		
+	}
+
+	/**
+	 * @param p_field
+	 */
+	private void setJTextField2(JTextField p_field)
+	{
+		jTextField2 = p_field;
+
+	}
+	public void actionPerformed(ActionEvent e)
+	{
+		String cmd = e.getActionCommand();
+		
+		Object objectoRemovido = null;
+
+		if (cmd.equals(cmd_Remover))
+		{
+			objectoRemovido = remover(SimuladorDeEmissaoDeAlarmes.removeAlarme(getJTextField().getText(),getJTextField2().getText()));
+		} else if (cmd.equals(cmd_Adicionar))
+		{
+			adicionar(SimuladorDeEmissaoDeAlarmes.addAlarme(getJTextField().getText(),getJTextField2().getText()));
+		}
+	}
+
+	/**
+	 * 
+	 */
+	private JTextField getJTextField2()
+	{
+		return jTextField2;
 	}
 
 }

@@ -8,7 +8,7 @@
  */
 package correlacaodealarmes;
 
-import simuladordarede.Alarmes;
+import geradorautomaticodealarmes.Alarmes;
 
 import java.util.Collection;
 import java.util.Iterator;
@@ -17,10 +17,14 @@ import java.util.Set;
 import java.util.TreeMap;
 import java.util.TreeSet;
 
-import geradorautomaticoderotas.Canais;
-import geradorautomaticoderotas.RotaFisica;
-import biblioteca.Componente;
-import biblioteca.IdMas;
+import javax.swing.tree.DefaultMutableTreeNode;
+import javax.swing.tree.DefaultTreeModel;
+
+import gerenciadordetopologia.Canais;
+import gerenciadordetopologia.RotaFisica;
+import gerenciadordebiblioteca.Componente;
+import gerenciadordebiblioteca.ID;
+import gerenciadordebiblioteca.IdMas;
 
 /**
  * @author Carlos Delfino
@@ -209,7 +213,7 @@ public class GeradorAutomaticoDeDominio extends TreeMap
 	 * @param p_idComponente
 	 * @return
 	 */
-	public Set getComponentesPossivelmenteFalhos(IdMas p_idComponente)
+	public Set getComponentesPossivelmenteFalhos(ID p_idComponente)
 	{
 		Set l_componentesFalhos = new TreeSet();
 
@@ -228,7 +232,7 @@ public class GeradorAutomaticoDeDominio extends TreeMap
 	/**
 	 * @param l_idComponente
 	 */
-	public Alarmes getAlarmes(IdMas p_idComponente)
+	public Alarmes getAlarmes(ID p_idComponente)
 	{
 		Alarmes l_alarmes = new Alarmes();
 		for (Iterator l_iteratorCAlarmante = ((Collection)get(p_idComponente)).iterator();
@@ -241,26 +245,45 @@ public class GeradorAutomaticoDeDominio extends TreeMap
 		return l_alarmes;
 
 	}
-	//	public Alarmes getAlarmes(IdMas p_idMas)
-	//	{
-	//		for (Iterator l_componentes = keySet().iterator(); l_componentes.hasNext();)
-	//		{
-	//
-	//			IdMas l_idMas = (IdMas)l_componentes.next();
-	//
-	//			if (l_idMas.equals(p_idMas))
-	//			{
-	//				Set l_componentesAlarmantes = (Set)get(l_idMas);
-	//				Alarmes l_alarmes = new Alarmes();
-	//				for (Iterator iter = l_componentesAlarmantes.iterator(); iter.hasNext();)
-	//				{
-	//					l_alarmes.add(((Componente)iter.next()).emitirAlarme());
-	//
-	//				}
-	//				return l_alarmes;
-	//			}
-	//		}
-	//		return null;
-	//	}
+	/**
+	 * 
+	 */
+	public DefaultTreeModel arvoreDoDominio()
+	{
+		DefaultMutableTreeNode l_dmtn = new DefaultMutableTreeNode("Dominio de Alarmes");
+		DefaultMutableTreeNode l_dmtnComponentesSemAlarmes = new DefaultMutableTreeNode("Componentes que não terão alarmes");
+		
+		int count = 0;
+
+		for (Iterator iter = keySet().iterator(); iter.hasNext();)
+		{
+			IdMas l_oIdMasChave = (IdMas)iter.next();
+			Set l_alarmes = (Set)get(l_oIdMasChave);
+
+			if (!l_alarmes.isEmpty())
+			{
+				DefaultMutableTreeNode l_dmtnComponenteFalho = new DefaultMutableTreeNode(l_oIdMasChave + " falhando teremos alarmes de:");
+				l_dmtn.add(l_dmtnComponenteFalho);
+
+				int countalarmes = 0;
+				for (Iterator l_listaAlarmes = ((Set)get(l_oIdMasChave)).iterator();
+					l_listaAlarmes.hasNext();
+					)
+				{
+					DefaultMutableTreeNode l_dmtnComponenteAlarmes = new DefaultMutableTreeNode(l_listaAlarmes.next());
+					l_dmtnComponenteFalho.add(l_dmtnComponenteAlarmes);
+				}
+			} else
+			{
+				l_dmtnComponentesSemAlarmes.add(new DefaultMutableTreeNode(l_oIdMasChave));
+			}
+		}
+
+		l_dmtn.add(l_dmtnComponentesSemAlarmes);
+		
+		return new DefaultTreeModel(l_dmtn);
+		
+		
+	}
 
 }

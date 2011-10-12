@@ -7,6 +7,7 @@ package gui.actionlisteners;
 import gui.PrincipalWindows;
 import gui.grafos.Grafo;
 
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
@@ -15,7 +16,7 @@ import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 
 import util.FiltroDeArquivos;
-import biblioteca.erros.ExceptionBibliotecaNaoDefinida;
+import gerenciadordebiblioteca.erros.ExceptionBibliotecaNaoDefinida;
 
 /*
  * ActionListenerCarregaTopologia.java Criado em 01/02/2004
@@ -135,7 +136,9 @@ public class ActionListenerCarregaTopologia extends ActionListenerCarregador
 		
 		l_grafoTopologia.setPreferredSize(new Dimension(775,445));
 		
-		l_grafoTopologia.setFontePadraoDosNos( new Font("Tahoma", Font.BOLD, 14));
+		l_grafoTopologia.setFontePadraoDosNos( new Font("Tahoma", Font.BOLD, 12));
+		
+		l_grafoTopologia.setCorFixa(Color.GREEN);
 		
 		l_grafoTopologia.setPosicionarNosRandomicamente(false);
 		

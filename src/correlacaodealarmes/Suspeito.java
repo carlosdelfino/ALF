@@ -8,7 +8,7 @@
  */
 package correlacaodealarmes;
 
-import biblioteca.IdMas;
+import gerenciadordebiblioteca.ID;
 
 /**
  * @author Carlos Delfino
@@ -32,12 +32,12 @@ class Suspeito implements Comparable
 	static int PB_MINIMA = 1;
 	static int PB_MAXIMA = 100;
 
-	private IdMas idMas;
+	private ID idMas;
 
 	/**
 	 * @param p_mas
 	 */
-	public Suspeito(IdMas p_idMas)
+	public Suspeito(ID p_idMas)
 	{
 		setIdMas(p_idMas);
 	}
@@ -45,7 +45,7 @@ class Suspeito implements Comparable
 	/**
 	 * @param p_idMas
 	 */
-	private void setIdMas(IdMas p_idMas)
+	private void setIdMas(ID p_idMas)
 	{
 		idMas = p_idMas;
 		
@@ -53,7 +53,7 @@ class Suspeito implements Comparable
 	/**
 	 * @param p_idMas
 	 */
-	IdMas getIdMas()
+	ID getIdMas()
 	{
 		return idMas;
 		

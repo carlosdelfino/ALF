@@ -25,13 +25,12 @@ public class ActionListenerAdicionarRemoverComponentes extends ActionListenerAdi
 	 */
 	public ActionListenerAdicionarRemoverComponentes(PanelSimuladorDeAlarmes p_parente)
 	{
-		setParente(p_parente);
 		setJTextField(p_parente.getJTFComponentesAFalhar());
 		setListModel(p_parente.getjListModelComponentesAFalhar());
 		setJList(p_parente.getJListDeComponentesAFalhar());
 		
-		SetJBottonAdicionar(p_parente.getJBAdicionarComponentesAFalhar());
-		SetJBottonRemover(p_parente.getJBRemoverComponentesAFalhar());
+		setJBottonAdicionar(p_parente.getJBAdicionarComponentesAFalhar());
+		setJBottonRemover(p_parente.getJBRemoverComponentesAFalhar());
 		
 
 		setLinhaDeStatus(p_parente.getLinhaDeStatus());

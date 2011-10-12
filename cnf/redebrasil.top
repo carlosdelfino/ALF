@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Topologia xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="topologia.xsd">
+	<Elemento id="n01" idelemento="NL" nome="No de Rede 1" latitude="30" longitude="200"/>
+	<Elemento id="n02" idelemento="NC" nome="No de Rede 2" latitude="85" longitude="60"/>
+	<Elemento id="n03" idelemento="NC" nome="No de Rede 3" latitude="85" longitude="400"/>
+	<Elemento id="n04" idelemento="NL" nome="No de Rede 4" latitude="160" longitude="180"/>
+	<Elemento id="n05" idelemento="NL" nome="No de Rede 5" latitude="160" longitude="270"/>
+	<Elemento id="n06" idelemento="NC" nome="No de Rede 6" latitude="260" longitude="400"/>
+	<Elemento id="n07" idelemento="NL" nome="No de Rede 7" latitude="260" longitude="220"/>
+	<Elemento id="n08" idelemento="NC" nome="No de Rede 8" latitude="260" longitude="60"/>
+	<Elemento id="n09" idelemento="NL" nome="No de Rede 9" latitude="360" longitude="60"/>
+	<Elemento id="f0102" idelemento="Link"/>
+	<Elemento id="f0208" idelemento="Link"/>
+	<Elemento id="f0807" idelemento="Link"/>
+	<Elemento id="f0706" idelemento="Link"/>
+	<Elemento id="f0603" idelemento="Link"/>
+	<Elemento id="f0301" idelemento="Link"/>
+	<Elemento id="f0204" idelemento="Link"/>
+	<Elemento id="f0405" idelemento="Link"/>
+	<Elemento id="f0506" idelemento="Link"/>
+	<Elemento id="f0809" idelemento="Link"/>
+</Topologia>

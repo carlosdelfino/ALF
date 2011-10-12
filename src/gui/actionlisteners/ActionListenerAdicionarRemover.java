@@ -8,8 +8,6 @@
  */
 package gui.actionlisteners;
 
-import gui.PanelSimuladorDeAlarmes;
-
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -43,8 +41,6 @@ public class ActionListenerAdicionarRemover implements ActionListener
 
 	private DefaultListModel listmodel;
 
-	private PanelSimuladorDeAlarmes parente;
-
 	/**
 	 * @param p_field
 	 */
@@ -69,29 +65,54 @@ public class ActionListenerAdicionarRemover implements ActionListener
 			adicionar(jTextField.getText());
 		}
 	}
-	protected void remover(Object p_dado)
+	protected Object remover(Object p_dado)
 	{
+		Object objectRemovido = null;
+		Object objectARemover = jList.getSelectedValue();
 		if (listmodel.getSize() != 0)
 		{
 			if (jList.getSelectedIndex() == -1)
 			{
-				listmodel.removeElement(p_dado);
+				if (listmodel.removeElement(p_dado))
+				{
+					objectRemovido = objectARemover;
+				} 
+			
 			} else
 			{
-				listmodel.remove(jList.getSelectedIndex());
+				objectRemovido = listmodel.remove(jList.getSelectedIndex());
 				if (listmodel.getSize() == 0)
-					parente.getJBRemoverComponentesAFalhar().setEnabled(false);
+					getJButtonRemover().setEnabled(false);
 			}
 		}
+		return objectRemovido;
 	}
+	/**
+	 * 
+	 */
+	private JButton getJButtonRemover()
+	{
+		return buttonRemover;
+		
+	}
+
 	protected void adicionar(Object p_dado)
 	{
 		if (!p_dado.equals(""))
 		{
-			parente.getJBRemoverComponentesAFalhar().setEnabled(true);
+			getJButtonAdicionar().setEnabled(true);
 			if (!listmodel.contains(p_dado))
 				listmodel.addElement(p_dado);
 		}
+	}
+
+	/**
+	 * 
+	 */
+	private JButton getJButtonAdicionar()
+	{
+		return buttonAdicionar;
+		
 	}
 
 	/**
@@ -123,7 +144,7 @@ public class ActionListenerAdicionarRemover implements ActionListener
 	/**
 	 * @param p_button
 	 */
-	protected void SetJBottonRemover(JButton p_button)
+	protected void setJBottonRemover(JButton p_button)
 	{
 		buttonAdicionar = p_button;
 	}
@@ -131,18 +152,19 @@ public class ActionListenerAdicionarRemover implements ActionListener
 	/**
 	 * @param p_button
 	 */
-	protected void SetJBottonAdicionar(JButton p_button)
+	protected void setJBottonAdicionar(JButton p_button)
 	{
 		buttonRemover = p_button;
 	}
 
 	/**
-	 * @param p_alarmes
+	 * 
 	 */
-	protected void setParente(PanelSimuladorDeAlarmes p_parente)
+	protected JTextField getJTextField()
 	{
-		parente = p_parente;
-
+return jTextField;
+		
 	}
+
 
 }

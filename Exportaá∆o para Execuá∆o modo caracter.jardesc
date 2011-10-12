@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jardesc>
+    <jar path="C:/Correlação De Alarmes/CorrelacaoDeAlarmes-II-Caracter.jar"/>
+    <options overwrite="true" compress="true" exportErrors="true"
+        exportWarnings="true" saveDescription="true"
+        descriptionLocation="/Correlação de Alarmes - Ver. II/Exportação para Execução modo caracter.jardesc"
+        useSourceFolders="false" buildIfNeeded="true"/>
+    <manifest manifestVersion="1.0" usesManifest="true"
+        reuseManifest="false" saveManifest="true"
+        generateManifest="true"
+        manifestLocation="/Correlação de Alarmes - Ver. II/Manifesto caracter" mainClassHandleIdentifier="=Correlação de Alarmes - Ver. II/src&lt;{Principal.java[Principal">
+        <sealing sealJar="false">
+            <packagesToSeal/>
+            <packagesToUnSeal/>
+        </sealing>
+    </manifest>
+    <selectedElements exportClassFiles="true" exportJavaFiles="true">
+        <folder path="/Grafos/audio"/>
+        <javaElement handleIdentifier="=Grafos/src&lt;correlacaodealarmes"/>
+        <javaElement handleIdentifier="=Correlação de Alarmes - Ver. II/src"/>
+    </selectedElements>
+</jardesc>

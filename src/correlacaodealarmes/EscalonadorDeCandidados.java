@@ -8,8 +8,8 @@
  */
 package correlacaodealarmes;
 
-import geradorautomaticoderotas.Canais;
-import geradorautomaticoderotas.Canal;
+import gerenciadordetopologia.Canais;
+import gerenciadordetopologia.Canal;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -22,10 +22,11 @@ import java.util.Map;
 import java.util.Set;
 import java.util.TreeSet;
 
-import simuladordarede.Alarme;
-import simuladordarede.Alarmes;
-import biblioteca.Componente;
-import biblioteca.IdMas;
+import geradorautomaticodealarmes.Alarme;
+import geradorautomaticodealarmes.Alarmes;
+import gerenciadordebiblioteca.Componente;
+import gerenciadordebiblioteca.ID;
+import gerenciadordebiblioteca.IdMas;
 
 /**
  * @author Carlos Delfino
@@ -214,7 +215,7 @@ class EscalonadorDeCandidados
 			)
 		{
 			Alarme l_alarme = (Alarme)l_iteratorAlarmesCA2.next();
-			IdMas l_idOrigemAlarme = l_alarme.getIdMasOrigem();
+			ID l_idOrigemAlarme = l_alarme.getIdMasOrigem();
 
 			// pego no dominio os possiveis suspeitos para um determinado alarme
 			Set l_conjuntoSuspeitos = gad.getComponentesPossivelmenteFalhos(l_idOrigemAlarme);

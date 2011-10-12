@@ -8,7 +8,7 @@
  */
 package correlacaodealarmes;
 
-import simuladordarede.Alarme;
+import geradorautomaticodealarmes.Alarme;
 
 import java.util.Comparator;
 

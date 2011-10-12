@@ -8,13 +8,13 @@
  */
 package correlacaodealarmes;
 
-import simuladordarede.Alarme;
+import geradorautomaticodealarmes.Alarme;
 
 import java.util.Comparator;
 import java.util.Iterator;
 
-import geradorautomaticoderotas.Canais;
-import geradorautomaticoderotas.Canal;
+import gerenciadordetopologia.Canais;
+import gerenciadordetopologia.Canal;
 
 /**
  * @author Carlos Delfino

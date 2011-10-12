@@ -1,0 +1,91 @@
+<!-- $Id:$ -->
+<!-- edited with XMLSpy v2005 rel. 3 U (http://www.altova.com) by  () -->
+<Biblioteca xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="biblioteca.xsd">
+	<DescricaoClasse selfalarm="true">
+		<Descricao>Alto Alarmante</Descricao>
+	</DescricaoClasse>
+	<DescricaoClasse outalarm="true">
+		<Descricao>Alarmante Externo</Descricao>
+	</DescricaoClasse>
+	<DescricaoClasse selfalarm="true" maskalarm="true">
+		<Descricao>Mascarador</Descricao>
+	</DescricaoClasse>
+	<DescricaoClasse>
+		<Descricao>Passivo</Descricao>
+	</DescricaoClasse>
+	<Componente id="adf" nome="Add Drop Filter" selfalarm="true">
+		<Descricao>O Add Drop Filter tem como tradução: Filtro de Insersão e Derivação. Na moneclatura usada pela Mas ele usa a identificação no formato{idMas}</Descricao>
+	</Componente>
+	<Componente id="rx" nome="Receptor" outalarm="true"/>
+	<Componente id="tx" nome="Transmissor" selfalarm="true" maskalarm="true"/>
+	<Componente id="r3" nome="Regenerador 3 Estados" outalarm="true"/>
+	<Componente id="ps" nome="Protection Switch" outalarm="true"/>
+	<Componente id="sw" nome="Switch" selfalarm="true"/>
+	<Componente id="lap" nome="Local Access Port"/>
+	<Componente id="mux" nome="Multiplexador"/>
+	<Componente id="demux" nome="Demultiplexador"/>
+	<Componente id="fibra" nome="Fibra"/>
+	<Elemento id="NL" tipo="Local" nome="Nó Local">
+		<Componentes idComp="adf" idMas="1x0a"/>
+		<Componentes idComp="rx" idMas="2x0a"/>
+		<Componentes idComp="r3" idMas="2x0d"/>
+		<Componentes idComp="ps" idMas="2x03"/>
+		<Componentes idComp="lap" idMas="0x00"/>
+		<Componentes idComp="tx" idMas="3x0e"/>
+	</Elemento>
+	<Elemento id="NC" tipo="Central" nome="Nó Central">
+		<Componentes idComp="demux" idMas="0x0y"/>
+		<Componentes idComp="ps" idMas="2xz1"/>
+		<Componentes idComp="rx" idMas="2xz2"/>
+		<Componentes idComp="r3" idMas="2xz3"/>
+		<Componentes idComp="sw" idMas="1x01"/>
+		<Componentes idComp="lap" idMas="0x00"/>
+		<Componentes idComp="tx" idMas="3x0z"/>
+		<Componentes idComp="mux" idMas="0x10"/>
+	</Elemento>
+	<Elemento id="Link" tipo="Link" nome="Fibra Óica">
+		<Componentes idComp="fibra" idMas="00yx"/>
+	</Elemento>
+	<SubElemento id="nli" idElemento="NL" posicao="inicial" nome="Sub Nó Local Inicial">
+		<Componentes idComp="lap" idMas="0x00"/>
+		<Componentes idComp="tx" idMas="3x0e"/>
+		<Componentes idComp="adf" idMas="1x0a"/>
+	</SubElemento>
+	<SubElemento id="nlp" idElemento="NL" posicao="passagem" nome="Sub Nó Local de Passagem">
+		<Componentes idComp="adf" idMas="1x0a"/>
+	</SubElemento>
+	<SubElemento id="nlf" idElemento="NL" posicao="final" nome="Sub Nó Local Final">
+		<Componentes idComp="adf" idMas="1x0a"/>
+		<Componentes idComp="rx" idMas="2x0a"/>
+		<Componentes idComp="r3" idMas="2x0d"/>
+		<Componentes idComp="ps" idMas="2x03"/>
+		<Componentes idComp="lap" idMas="0x00"/>
+	</SubElemento>
+	<SubElemento id="nci" idElemento="NC" posicao="inicial" nome="Sub Nó Central Inicial">
+		<Componentes idComp="lap" idMas="0x00"/>
+		<Componentes idComp="sw" idMas="1x01"/>
+		<Componentes idComp="tx" idMas="3x0z"/>
+		<Componentes idComp="mux" idMas="0x10"/>
+	</SubElemento>
+	<SubElemento id="ncp" idElemento="NC" posicao="passagem" nome="Sub Nó Central de Passagem">
+		<Componentes idComp="demux" idMas="0x0y"/>
+		<Componentes idComp="ps" idMas="2xz1"/>
+		<Componentes idComp="rx" idMas="2xz2"/>
+		<Componentes idComp="r3" idMas="2xz3"/>
+		<Componentes idComp="sw" idMas="1x01"/>
+		<Componentes idComp="tx" idMas="3x0z"/>
+		<Componentes idComp="mux" idMas="0x10"/>
+	</SubElemento>
+	<SubElemento id="ncf" idElemento="NC" posicao="final" nome="Sub Nó Central Final">
+		<Componentes idComp="demux" idMas="0x0y"/>
+		<Componentes idComp="ps" idMas="2xz1"/>
+		<Componentes idComp="rx" idMas="2xz2"/>
+		<Componentes idComp="r3" idMas="2xz3"/>
+		<Componentes idComp="sw" idMas="1x01"/>
+		<Componentes idComp="lap" idMas="0x00"/>
+	</SubElemento>
+	<SubElemento id="linkp" idElemento="Link" posicao="passagem" nome="Link propriamente">
+		<Componentes idComp="fibra" idMas="00yx"/>
+	</SubElemento>
+</Biblioteca>
+<!--$Log:$-->
