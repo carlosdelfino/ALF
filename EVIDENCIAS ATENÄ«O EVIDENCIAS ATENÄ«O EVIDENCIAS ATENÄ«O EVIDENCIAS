@@ -1,0 +1,6 @@
+{c3 - Canal #3=[(1 18 0 2) com probabilidade de 50%, (0 0 16 18) com probabilidade de 1%, (0 16 1 0) com probabilidade de 1%, (0 0 18 20) com probabilidade de 1%, (0 0 20 21) com probabilidade de 1%], c1 - Canal #1=[(1 18 0 2) com probabilidade de 50%, (0 0 16 18) com probabilidade de 1%, (0 16 1 0) com probabilidade de 1%], c6 - Canal #6=[(0 16 1 0) com probabilidade de 1%], c2 - Canal #2=[(1 18 0 2) com probabilidade de 50%, (0 0 16 18) com probabilidade de 1%, (0 16 1 0) com probabilidade de 1%, (0 0 18 20) com probabilidade de 1%]}
+
+Na amostragem acima, o componente (0 16 1 0) pode ser 
+descartado, já que o mesmo quando quebra deve gerar
+alarme nos componentes outalarme do elemento 15, visto
+que temos um canal passando pelo 16 para o 15, o canal 6

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jardesc>
+    <jar path="D:/workspace/Correlação de Alarmes - Ver. II/Correlação de Alarmes Ver. II - backup - 20040409.jar"/>
+    <options overwrite="true" compress="true" exportErrors="true"
+        exportWarnings="true" saveDescription="true"
+        descriptionLocation="/Correlação de Alarmes - Ver. II/backup.jardesc"
+        useSourceFolders="false" buildIfNeeded="true"/>
+    <manifest manifestVersion="1.0" usesManifest="true"
+        reuseManifest="false" saveManifest="true"
+        generateManifest="true" manifestLocation="/Correlação de Alarmes - Ver. II/Manifesto do Backup">
+        <sealing sealJar="false">
+            <packagesToSeal/>
+            <packagesToUnSeal/>
+        </sealing>
+    </manifest>
+    <selectedElements exportClassFiles="true" exportJavaFiles="true">
+        <file path="/Correlação de Alarmes - Ver. II/Manifesto do Backup"/>
+        <file path="/Correlação de Alarmes - Ver. II/avaliação de resultados do escalonador 2.txt"/>
+        <file path="/Correlação de Alarmes - Ver. II/Manifesto caracter"/>
+        <file path="/Correlação de Alarmes - Ver. II/Exportação para Execução modo caracter.jardesc"/>
+        <file path="/Correlação de Alarmes - Ver. II/EVIDENCIAS ATENÇÃO EVIDENCIAS ATENÇÃO EVIDENCIAS ATENÇÃO EVIDENCIAS"/>
+        <file path="/Correlação de Alarmes - Ver. II/Exportação para Execução modo grafico.jardesc"/>
+        <folder path="/Correlação de Alarmes - Ver. II/cnf"/>
+        <file path="/Correlação de Alarmes - Ver. II/.classpath"/>
+        <folder path="/Correlação de Alarmes - Ver. II/uml"/>
+        <file path="/Correlação de Alarmes - Ver. II/avaliação de resultados do escalonador.txt"/>
+        <file path="/Correlação de Alarmes - Ver. II/mapa_brasil.gif"/>
+        <javaElement handleIdentifier="=Grafos"/>
+        <file path="/Correlação de Alarmes - Ver. II/xdoclet-build.xml"/>
+        <file path="/Correlação de Alarmes - Ver. II/.xdoclet"/>
+        <file path="/Correlação de Alarmes - Ver. II/backup.jardesc"/>
+        <javaElement handleIdentifier="=Correlação de Alarmes - Ver. II/src"/>
+        <folder path="/Correlação de Alarmes - Ver. II/doc"/>
+        <file path="/Correlação de Alarmes - Ver. II/rascunho.jpage"/>
+        <file path="/Correlação de Alarmes - Ver. II/Manifesto grafico"/>
+        <file path="/Correlação de Alarmes - Ver. II/javadoc.xml"/>
+        <folder path="/Correlação de Alarmes - Ver. II/temp"/>
+        <folder path="/Correlação de Alarmes - Ver. II/lib"/>
+        <file path="/Correlação de Alarmes - Ver. II/.project"/>
+        <file path="/Correlação de Alarmes - Ver. II/rascunho"/>
+        <file path="/Correlação de Alarmes - Ver. II/mapa_nordeste_0.gif"/>
+    </selectedElements>
+</jardesc>
