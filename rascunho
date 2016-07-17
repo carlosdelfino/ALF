@@ -1,3 +1,0 @@
-l_alarmeElementXML.getAttribute("nomeOrigem"));
-l_alarmeElementXML.getAttribute("idMasOrigem"));
-l_alarmeElementXML.getAttribute("nivel"));
